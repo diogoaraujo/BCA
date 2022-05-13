@@ -9,6 +9,8 @@ pypdf2 = "*"
 pandas = "*"
 tabulate = "*"
 tabula-py = "*"
+pymupdf = "*"
+regex = "*"
 
 [dev-packages]
 
