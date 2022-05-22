@@ -10,11 +10,12 @@ for pageNumber, page in enumerate(file.pages(), start = 1):
     text = page.getText()
     
     txt = open(f'repost_Page_{pageNumber}.txt', 'a')
-    txt.writelines(text)
+    #txt.writelines(text)
     txt.close()
 #----------------------------------------------------------------
 #Read PDF file
 p=fitz.open(r"C:\Users\araujo\Projects\BCA\Apoiadas AGO2021.pdf")
+
 #----------------------------------------------------------------    
 #Search Pattern
 NumPages =p.pageCount
@@ -32,9 +33,9 @@ for i in range(0, NumPages):
     print("\nLooking through page" + str(i+1)+"\n")
     text=PageObj.getText()
     for pattern in patterns:
-        print('Looking for (%s)\t'%pattern)
+        print('Looking for (%s)\t'%pattern) 
     if re.search(pattern,text):
             print("FOUND a match!")
     else:
         print("not match")
-        
+
