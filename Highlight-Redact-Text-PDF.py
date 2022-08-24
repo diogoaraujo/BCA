@@ -138,7 +138,7 @@ def process_data(input_file: str, output_file: str, search_str: str, pages: Tupl
     # Save the output buffer to the output file
     with open(output_file, mode='wb') as f:
         f.write(output_buffer.getbuffer())
-def remove_highlght(input_file: str, output_file: str, pages: Tuple = None):
+def remove_highlight(input_file: str, output_file: str, pages: Tuple = None):
     # Open the PDF
     pdfDoc = fitz.open(input_file)
     # Save the generated PDF to memory buffer
@@ -183,7 +183,7 @@ def process_file(**kwargs):
     action = kwargs.get('action')
     if action == "Remove":
         # Remove the Highlights except Redactions
-        remove_highlght(input_file=input_file,
+        remove_highlight(input_file=input_file,
                         output_file=output_file, pages=pages)
     else:
         process_data(input_file=input_file, output_file=output_file,
